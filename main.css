@@ -1,0 +1,157 @@
+/* Credits: https://codepen.io/donovanh/pen/pJzwEw*/
+body {
+font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
+color: #333;
+}        	
+
+.star {
+animation: star 4s ease-out ;
+}
+.wars {
+animation: wars 4s ease-out ;
+}
+
+/* Keyframes */
+@keyframes star {
+0% {
+opacity: 0;
+transform: scale(1.5) translateY(-0.75em);
+}
+20% {
+opacity: 1;
+}
+89% {
+opacity: 1;
+transform: scale(1);
+}
+100% {
+opacity: 0;
+transform: translateZ(-1000em);
+}
+}
+
+@keyframes wars {
+0% {
+opacity: 0;
+transform: scale(1.5) translateY(0.5em);
+}
+20% {
+opacity: 1;
+}
+90% {
+opacity: 1;
+transform: scale(1);
+}
+100% {
+opacity: 0;
+transform: translateZ(-1000em);
+}
+}
+
+@keyframes spin-letters {
+0%, 10% {
+opacity: 0;
+transform: rotateY(90deg);
+}
+30% {
+opacity: 1;
+}
+70%, 86% {
+transform: rotateY(0);
+opacity: 1;
+}
+95%, 100% {
+opacity: 0;
+}
+}
+
+
+
+/* Make the 3D work on the container */
+.starwars-demo {
+perspective: 800px;
+transform-style: preserve3d;
+}
+
+/* General styles and layout */
+body {
+background: #000 url('img/bg.jpg');
+}
+
+.starwars-demo {
+height: 17em;
+left: 50%;
+position: absolute;
+top: 53%;
+transform: translate(-50%, -50%);
+width: 34em;
+}
+
+/*.byline span {
+display: inline-block;
+}*/
+
+img {
+width: 100%;
+}
+
+.star, .wars, .byline {
+position: absolute;
+}
+
+.star {
+top: -0.75em;
+}
+
+.wars {
+bottom: -0.5em;
+}
+
+
+
+/*** Media queries for adjusting to different screen sizes ***/
+
+@media only screen and (max-width: 600px) {
+.starwars-demo {
+//*font-size: 10px;*/
+}
+}
+
+@media only screen and (max-width: 480px) {
+.starwars-demo {
+/*font-size: 7px;*/
+}
+}
+#wrapper {
+position: absolute;
+left: 0;
+width: 320px;
+text-align: center;
+top: 50%;
+left: 50%;
+margin-left: -160px;
+margin-top: -160px;
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+}
+#wrapper a {
+color:#FFFF66;
+}
+h1 {
+font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+font-weight: 700;
+font-size: 30px;
+letter-spacing: 9px;
+text-transform: uppercase;
+margin: 12px 0;
+left: 4px;
+}
+a {
+color: #999;
+text-decoration: none;
+transition: color .2s ease;
+}
+a:hover {
+color: #FFFF66;
+}
